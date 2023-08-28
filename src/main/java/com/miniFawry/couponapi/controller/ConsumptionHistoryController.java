@@ -19,14 +19,14 @@ public class ConsumptionHistoryController {
     @Operation(summary = "Get Consumption History")
     @GetMapping("/")
     List<ConsumptionHistoryModel> viewConsumptionHistory() {
-        System.out.println("controller");
+        //System.out.println("controller");
         return consumptionHistoryService.viewConsumptionHistory();
     }
 
     @Operation(summary = "Get Consumption History By Coupon Code")
     @GetMapping("/{code}")
     List<ConsumptionHistoryModel> viewConsumptionHistoryByCode(@PathVariable String code) {
-        System.out.println("-- " + code);
+        //System.out.println("-- " + code);
         return consumptionHistoryService.viewConsumptionHistoryByCouponCode(code);
     }
 
