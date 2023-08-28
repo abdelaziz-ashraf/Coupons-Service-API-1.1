@@ -21,6 +21,7 @@ public class ConsumptionHistoryServiceImp implements ConsumptionHistoryService {
 
     @Override
     public List<ConsumptionHistoryModel> viewConsumptionHistory() {
+        System.out.println("Service");
         return consumptionHistoryRepository.findAll()
                 .stream()
                 .map(consumptionHistoryMapper::toModel)
