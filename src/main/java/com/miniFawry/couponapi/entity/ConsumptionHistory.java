@@ -26,7 +26,6 @@ public class ConsumptionHistory implements Serializable {
         this.orderCode = orderCode;
         this.priceBefore = priceBefore;
         this.priceAfter = priceAfter;
-        System.out.println("2 " + usedCoupon.getCode());
         this.usedCoupon = usedCoupon;
         this.consumedAt = new Date();
     }

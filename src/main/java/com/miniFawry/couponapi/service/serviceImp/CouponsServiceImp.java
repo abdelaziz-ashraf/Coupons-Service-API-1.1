@@ -100,7 +100,6 @@ public class CouponsServiceImp implements CouponsService {
 
         couponRepository.save(coupon);
 
-        System.out.println("1 " + coupon.getCode());
         ConsumptionHistory consumptionHistory = new ConsumptionHistory(
                 useCouponReq.getOrderCode(),
                 useCouponReq.getPriceBefore(),
