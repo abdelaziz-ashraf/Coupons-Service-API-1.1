@@ -1,5 +1,6 @@
 package com.miniFawry.couponapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.Date;
 
 @Schema(name = "Consumption History Schema")
 @Entity
+@Table(name = "consumption_history")
 @Data
 @Builder
 @NoArgsConstructor
@@ -46,6 +48,7 @@ public class ConsumptionHistory implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usedCoupon_id", referencedColumnName = "id")
+    @JsonIgnoreProperties(value = {"consumption_history", "hibernateLazyInitializer"})
     Coupon usedCoupon;
 
     Date consumedAt;
