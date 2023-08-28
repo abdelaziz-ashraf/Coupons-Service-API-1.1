@@ -24,7 +24,7 @@ public class ConsumptionHistoryServiceImp implements ConsumptionHistoryService {
         System.out.println("Service");
         return consumptionHistoryRepository.findAll()
                 .stream()
-                .map(consumptionHistoryMapper::toModel)
+                .map(consumptionHistory -> consumptionHistoryMapper.toModel(consumptionHistory))
                 .collect(Collectors.toList());
     }
 

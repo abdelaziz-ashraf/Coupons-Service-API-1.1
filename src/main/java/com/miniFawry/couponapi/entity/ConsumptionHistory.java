@@ -46,7 +46,7 @@ public class ConsumptionHistory implements Serializable {
     @Column(nullable = false)
     double priceAfter;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //(fetch = FetchType.LAZY)
     @JoinColumn(name = "usedCoupon_code", referencedColumnName = "code")
     @JsonIgnoreProperties(value = {"consumption_history", "hibernateLazyInitializer"})
     Coupon usedCoupon;
