@@ -22,11 +22,6 @@ public class ConsumptionHistoryServiceImp implements ConsumptionHistoryService {
     @Override
     public List<ConsumptionHistoryModel> viewConsumptionHistory() {
         //System.out.println("Service");
-        consumptionHistoryRepository.findAll()
-                .stream()
-                .map(consumptionHistory -> consumptionHistoryMapper.toModel(consumptionHistory))
-                .forEach(consumptionHistoryModel -> System.out.println(consumptionHistoryModel.getUsedCoupon().getCode()));
-
         return consumptionHistoryRepository.findAll()
                 .stream()
                 .map(consumptionHistory -> consumptionHistoryMapper.toModel(consumptionHistory))
